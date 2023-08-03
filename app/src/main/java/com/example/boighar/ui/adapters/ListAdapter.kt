@@ -22,7 +22,7 @@ class ListAdapter(var homeData: List<Data>) : RecyclerView.Adapter<ListAdapter.V
 
 
 
-        holder.childListAdapter = ChildItemAdapter(homeData)
+        holder.childListAdapter = ChildItemAdapter(currentItem.contents)
         holder.recyclerView.layoutManager = LinearLayoutManager(
             holder.recyclerView.context,
             LinearLayoutManager.HORIZONTAL,
