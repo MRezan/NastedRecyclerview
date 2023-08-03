@@ -4,20 +4,88 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.fregments.HomeFregment">
+    tools:context=".MainActivity">
 
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Boi Ghar"
-        android:textSize="@dimen/_50sdp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/red"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Left Icon - Navigation Drawer -->
+        <ImageView
+            android:id="@+id/icon_nav_drawer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_view_headline_24"
+            android:layout_gravity="start"
+            android:layout_marginStart="16dp"
+
+           />
+
+        <!-- Title TextView -->
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:text="রবি বইঘর"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_18sdp"
+            android:textStyle="bold"
+           />
+
+        <!-- Right Icon - Search -->
+        <ImageView
+            android:id="@+id/icon_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_search_24"
+            android:layout_gravity="end"
+            android:layout_marginEnd="16dp"
+            />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- This is the parent RecyclerView-->
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/parent_recyclerview"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0dp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/toolbar" />-->
+
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!-- ProgressBar -->
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="visible" />
+
+        <!-- Parent RecyclerView -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/parent_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone" />
+    </FrameLayout>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
